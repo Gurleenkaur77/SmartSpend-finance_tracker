@@ -1,0 +1,207 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #eed99b;
+  margin: 12px;
+  padding: 0;
+  min-height: 100vh;
+  color: #2e7c70;
+  text-align: center;
+}
+h1{
+      color: #2e7c70;
+}
+p{
+    font-weight: 500;
+    font-size: large;
+}
+.expense-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.note {
+  grid-column: 1 / span 2; /* note spans the full width */
+}
+
+.form-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form label {
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  text-align: left;
+}
+h2{
+    margin-top: 30px;
+    font-size: x-large;
+}
+/* Only affect inputs on the signup page */
+.signup input[type="text"],
+.signup input[type="password"],
+.signup input[type="email"] {
+  width: 180px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1.5px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: -272px;
+}
+.signup .helptext {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  display: block;
+  text-align: left;
+}
+.signup ul{
+    font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  display: block;
+  margin-left: 10px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  background-color: #fef6d3;   /* soft yellow */
+  color: #45837c;              /* your site's green text */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #a2b881;
+  box-shadow: 0 0 6px rgba(162, 184, 129, 0.4);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+  box-sizing: border-box;
+}
+.statement {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+  color: #2e7c70;
+  font-weight: 500;
+}
+.button-group form {
+  margin: 0;
+  padding: 0;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; 
+  margin-top: 20px;
+}
+
+
+#welcome {
+    font-style: italic;
+  font-size: 30px;
+  color: #45837c;
+  margin: 0;
+  text-align: left;
+}
+
+.auth {
+  display: flex;
+  gap: 15px;
+}
+
+.auth a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #45837c;
+  font-size: 16px;
+}
+
+.auth a:hover {
+  color: #000;
+}
+
+#tagline {
+  text-align: left;
+  font-size: 18px;
+  color: #45837c;
+  margin-top: 0px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+form {
+  display: inline-block;
+  margin: 10px;
+
+}
+
+.nav-btn {
+  background-color: #a8ba8d;
+  color: #276e66;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  width:230px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  
+  border: 2.5px solid #307e75; 
+
+}
+
+
+
+#tip {
+  margin-top: 10px;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+}
+
+.nav-btn{
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn:hover {
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}

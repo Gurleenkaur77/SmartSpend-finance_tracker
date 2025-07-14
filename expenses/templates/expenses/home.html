@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>SmartSpend-Home</title>
+    <link rel="stylesheet" href="{% static 'expenses/style.css' %}" />
+  </head>
+  <body>
+    
+
+<div class="header">
+  <h1 id="welcome">Welcome to SmartSpend!</h1>
+  <div class="auth">
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'login' %}">Log In</a>
+  </div>
+</div>
+
+<p id="tagline">Helping u save :&#41;</p>
+    <br>
+    <p class="statement">Let us get started by managing your finances below:</p>
+
+<div class="button-group">
+  <form action="{% url 'add_income' %}" method="get">
+    <button type="submit" class="nav-btn">Add Monthly Income</button>
+  </form>
+
+  <form action="{% url 'add_expense' %}" method="get">
+    <button type="submit" class="nav-btn">&#43; Add Expense</button>
+  </form>
+
+  <form action="{% url 'savings' %}"method="get">
+    <button type="submit" class="nav-btn">Savings</button>
+  </form>
+
+  <form action="{% url 'expense_history' %}"method="get">
+    <button type="submit" class="nav-btn">Show Expense History</button>
+  </form>
+
+  <form action="#">
+    <button type="submit" id="show-tip" class="nav-btn">Show Saving Tip!</button>
+    
+  </form>
+  <div id="tip"></div>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'expenses/script.js' %}"></script>
+  </body>
+</html>

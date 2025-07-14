@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Monthly Income</title>
+    <link rel="stylesheet" href="{% static 'expenses/style.css' %}">
+</head>
+<body>
+    <h1>Enter Monthly Income</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="nav-btn">Save Income</button>
+    </form>
+</body>
+</html>

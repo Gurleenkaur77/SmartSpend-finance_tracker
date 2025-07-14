@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="{% static 'expenses/style.css' %}">
+</head>
+<body>
+    <h1>Add Expense</h1>
+<form method="post" class="expense-form">
+    {% csrf_token %}
+
+    <div class="form-grid">
+        <div>{{ form.title.label_tag }} {{ form.title }}</div>
+        <div>{{ form.amount.label_tag }} {{ form.amount }}</div>
+        <div>{{ form.category.label_tag }} {{ form.category }}</div>
+        <div>{{ form.date.label_tag }} {{ form.date }}</div>
+        <div class="note">{{ form.note.label_tag }} {{ form.note }}</div>
+    </div>
+    <div class="form-button">
+        <button type="submit" class="nav-btn">Save Expense</button>
+    </div>
+</form>
+
+</body>
+</html>

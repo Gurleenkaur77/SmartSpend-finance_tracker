@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savings</title>
+    <link rel="stylesheet" href="{% static 'expenses/style.css' %}">
+</head>
+<body>
+    <h1>Your Monthly Savings</h1>
+    <br>
+    <p><strong>Total Income:</strong> ₹{{ income }}</p>
+<p><strong>Total Expenses:</strong> ₹{{ total_expenses }}</p>
+<br>
+{% if over_budget %}
+  <p >
+    Over Budget by ₹{{ over_budget_amount }}
+  </p>
+{% else %}
+  <p  >
+    Savings Left: ₹{{ savings }}
+  </p>
+{% endif %}
+
+</body>
+</html>

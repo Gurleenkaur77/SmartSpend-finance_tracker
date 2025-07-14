@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense History</title>
+    <link rel="stylesheet" href="{% static 'expenses/style.css' %}">
+</head>
+<body>
+    <h1>Expense History</h1>
+    <ul>
+        {% for expense in expenses %}
+            <li>{{ expense.date }} — {{ expense.title }} — ₹{{ expense.amount }} ({{ expense.category }})</li>
+        {% empty %}
+            <li>No expenses recorded.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
