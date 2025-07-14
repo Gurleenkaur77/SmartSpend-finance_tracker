@@ -10,7 +10,7 @@ CATEGORY_CHOICES = [
 ]
 
 class Expense(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # ⛔ Removed null=True
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
@@ -21,7 +21,7 @@ class Expense(models.Model):
         return f"{self.title} - ₹{self.amount}"
 
 class MonthlyIncome(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)  # ⛔ Removed null=True
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     month = models.DateField()
     amount = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -29,4 +29,4 @@ class MonthlyIncome(models.Model):
         return f"{self.month.strftime('%B %Y')} - ₹{self.amount}"
 
     class Meta:
-        unique_together = ('user', 'month')  # ✅ To allow per-user monthly income
+        unique_together = ('user', 'month')

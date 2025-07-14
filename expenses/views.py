@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
+# Home view showing total income, expenses, and savings
 @login_required
 def home(request):
     incomes = MonthlyIncome.objects.filter(user=request.user)
@@ -23,6 +24,7 @@ def home(request):
         'over_budget': over_budget
     })
 
+# View for current month's savings calculation
 @login_required
 def savings_view(request):
     today = timezone.now().date()
@@ -55,11 +57,13 @@ def savings_view(request):
         'over_budget_amount': abs(savings),
     })
 
+# View to list user's expense history
 @login_required
 def expense_history(request):
     expenses = Expense.objects.filter(user=request.user).order_by('-date')
     return render(request, 'expenses/expense_history.html', {'expenses': expenses})
 
+# View to add monthly income
 @login_required
 def add_income(request):
     if request.method == 'POST':
@@ -73,6 +77,7 @@ def add_income(request):
         form = MonthlyIncomeForm()
     return render(request, 'expenses/add_income.html', {'form': form})
 
+# View to add a new expense
 @login_required
 def add_expense(request):
     if request.method == 'POST':
@@ -86,6 +91,7 @@ def add_expense(request):
         form = ExpenseForm()
     return render(request, 'expenses/add_expense.html', {'form': form})
 
+# Signup view to create a new user
 def signup_view(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -97,6 +103,7 @@ def signup_view(request):
         form = SignUpForm()
     return render(request, 'expenses/signup.html', {'form': form})
 
+# Login view for existing users
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
