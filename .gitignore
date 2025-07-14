@@ -1,28 +1,28 @@
-# Python bytecode and cache
+# Bytecode and cache
 __pycache__/
 *.pyc
 
 # Virtual environments
-env/
 venv/
+env/
 
-# Django secret files
+# Secret files
 .env
 
-# SQLite database (if used)
+# Database files
 *.sqlite3
+spend_db
 
 # Logs
 *.log
 
-# VSCode or PyCharm settings
+# Editor settings
 .vscode/
 .idea/
-
-# MySQL dumps
-*.sql
 
 # OS-specific files
 .DS_Store
 Thumbs.db
 
+# SQL dumps
+*.sql
